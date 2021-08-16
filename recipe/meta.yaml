@@ -11,7 +11,7 @@ source:
   sha256: 1125883fe8b976f6a30bb7ef29a8c1ea9e27195c2e4d734fc3483b0f840ca89c
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
@@ -23,7 +23,7 @@ requirements:
     - jinja2
     - pandas
     - python >=3.6
-    - rdkit
+    - rdkit >=2020.03.1
 
 test:
   imports:
