@@ -18,11 +18,11 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python >=3.7
   run:
-    - jinja2
+    - jinja2>=2.11.0
     - pandas
-    - python >=3.6
+    - python >=3.7
     - rdkit >=2020.03.1
 
 test:
