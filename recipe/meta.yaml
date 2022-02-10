@@ -20,7 +20,7 @@ requirements:
     - pip
     - python >=3.7
   run:
-    - jinja2>=2.11.0
+    - jinja2 >=2.11.0
     - pandas
     - python >=3.7
     - rdkit >=2020.03.1
