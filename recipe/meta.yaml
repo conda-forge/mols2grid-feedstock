@@ -1,5 +1,5 @@
 {% set name = "mols2grid" %}
-{% set version = "0.1.0" %}
+{% set version = "0.2.0" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/mols2grid-{{ version }}.tar.gz
-  sha256: 3a6cadd73c8ccd79b7da978eb2fe2416153495239852039d76465c7c18d63b07
+  sha256: c1038df3f906ddce3731fac128e76dd7a871cfda576e63ff5ffbb5700e4ba189
 
 build:
   number: 0
@@ -18,11 +18,11 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python >=3.7
   run:
-    - jinja2
+    - jinja2 >=2.11.0
     - pandas
-    - python >=3.6
+    - python >=3.7
     - rdkit >=2020.03.1
 
 test:
