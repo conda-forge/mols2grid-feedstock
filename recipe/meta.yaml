@@ -32,6 +32,12 @@ test:
     - mols2grid
   commands:
     - pip check
+    - test -f ${PREFIX}/share/jupyter/nbextensions/mols2grid/extension.js                             # [unix]
+    - test -f ${PREFIX}/share/jupyter/nbextensions/mols2grid/index.js                                 # [unix]
+    - test -f ${PREFIX}/share/jupyter/labextensions/mols2grid/package.json                            # [unix]
+    - if not exist %PREFIX%\\share\\jupyter\\nbextensions\\mols2grid\\extension.js (exit 1)           # [win]
+    - if not exist %PREFIX%\\share\\jupyter\\nbextensions\\mols2grid\\index.js (exit 1)               # [win]
+    - if not exist %PREFIX%\\share\\jupyter\\labextensions\\mols2grid\\package.json (exit 1)          # [win]
   requires:
     - pip
 
