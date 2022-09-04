@@ -37,9 +37,11 @@ test:
 
 about:
   home: https://github.com/cbouy/mols2grid
-  summary: Chemical viewer for 2D structures of small molecules
+  summary: Interactive molecule viewer for 2D structures
   license: Apache-2.0
   license_file: LICENSE
+  doc_url: https://mols2grid.readthedocs.io
+  dev_url: https://github.com/cbouy/mols2grid
 
 extra:
   recipe-maintainers:
