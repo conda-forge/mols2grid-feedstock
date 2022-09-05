@@ -1,5 +1,5 @@
 {% set name = "mols2grid" %}
-{% set version = "0.2.4" %}
+{% set version = "1.0.0" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/mols2grid-{{ version }}.tar.gz
-  sha256: 4677779ee721ecde85adb937304b8411cf4246496c48a52644c86229ddb1ff2e
+  sha256: f50cd3c25766212146e92683a00f13ce06bb18a62b76848cddf5b385b08f7837
 
 build:
   number: 0
@@ -19,25 +19,38 @@ requirements:
   host:
     - pip
     - python >=3.7
+    - jupyter_packaging
+    - setuptools >=40.8.0
+    - wheel
   run:
     - jinja2 >=2.11.0
+    - numpy
     - pandas
     - python >=3.7
     - rdkit >=2020.03.1
+    - ipywidgets >=7,<8
 
 test:
   imports:
     - mols2grid
   commands:
     - pip check
+    - test -f ${PREFIX}/share/jupyter/nbextensions/mols2grid/extension.js                             # [unix]
+    - test -f ${PREFIX}/share/jupyter/nbextensions/mols2grid/index.js                                 # [unix]
+    - test -f ${PREFIX}/share/jupyter/labextensions/mols2grid/package.json                            # [unix]
+    - if not exist %PREFIX%\\share\\jupyter\\nbextensions\\mols2grid\\extension.js (exit 1)           # [win]
+    - if not exist %PREFIX%\\share\\jupyter\\nbextensions\\mols2grid\\index.js (exit 1)               # [win]
+    - if not exist %PREFIX%\\share\\jupyter\\labextensions\\mols2grid\\package.json (exit 1)          # [win]
   requires:
     - pip
 
 about:
   home: https://github.com/cbouy/mols2grid
-  summary: Chemical viewer for 2D structures of small molecules
+  summary: Interactive molecule viewer for 2D structures
   license: Apache-2.0
   license_file: LICENSE
+  doc_url: https://mols2grid.readthedocs.io
+  dev_url: https://github.com/cbouy/mols2grid
 
 extra:
   recipe-maintainers:
