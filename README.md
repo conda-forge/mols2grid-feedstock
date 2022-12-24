@@ -7,7 +7,11 @@ Package license: Apache-2.0
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/mols2grid-feedstock/blob/main/LICENSE.txt)
 
-Summary: Chemical viewer for 2D structures of small molecules
+Summary: Interactive molecule viewer for 2D structures
+
+Development: https://github.com/cbouy/mols2grid
+
+Documentation: https://mols2grid.readthedocs.io
 
 Current build status
 ====================
