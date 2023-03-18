@@ -19,9 +19,8 @@ requirements:
   host:
     - pip
     - python >=3.7
-    - jupyter_packaging
-    - setuptools >=40.8.0
-    - wheel
+    - hatchling
+    - hatch-jupyter-builder >=0.8.1
   run:
     - jinja2 >=2.11.0
     - numpy
