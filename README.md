@@ -1,11 +1,11 @@
-About mols2grid
-===============
+About mols2grid-feedstock
+=========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/mols2grid-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/cbouy/mols2grid
 
 Package license: Apache-2.0
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/mols2grid-feedstock/blob/main/LICENSE.txt)
 
 Summary: Interactive molecule viewer for 2D structures
 
