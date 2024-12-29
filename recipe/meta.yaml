@@ -7,25 +7,25 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/mols2grid-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/mols2grid-{{ version }}.tar.gz
   sha256: 9956e2f45c3b0ed68e7c12b58628fb1ea15c684e218551bc81c6ddf2b48e550b
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python >=3.7
+    - python {{ python_min }}
     - hatchling
     - hatch-jupyter-builder >=0.8.1
   run:
     - jinja2 >=2.11.0
     - numpy
     - pandas
-    - python >=3.7
+    - python >={{ python_min }}
     - rdkit >=2020.03.1
     - ipywidgets >=7,<8
 
@@ -42,6 +42,7 @@ test:
     - if not exist %PREFIX%\\share\\jupyter\\labextensions\\mols2grid\\package.json (exit 1)          # [win]
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/cbouy/mols2grid
