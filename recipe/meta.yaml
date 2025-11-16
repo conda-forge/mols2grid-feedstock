@@ -1,5 +1,5 @@
 {% set name = "mols2grid" %}
-{% set version = "2.0.0" %}
+{% set version = "2.1.0" %}
 
 
 package:
@@ -8,10 +8,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/mols2grid-{{ version }}.tar.gz
-  sha256: 9956e2f45c3b0ed68e7c12b58628fb1ea15c684e218551bc81c6ddf2b48e550b
+  sha256: 8401ca3bc70bcf5c7f7354564f94b76d0ed8ab098d5bb32870f65d1ad232c723
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
