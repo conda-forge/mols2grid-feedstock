@@ -27,19 +27,17 @@ requirements:
     - pandas
     - python >={{ python_min }}
     - rdkit >=2020.03.1
-    - ipywidgets >=7,<8
+    - anywidget
 
 test:
   imports:
     - mols2grid
+    - mols2grid.datafiles
   commands:
     - pip check
-    - test -f ${PREFIX}/share/jupyter/nbextensions/mols2grid/extension.js                             # [unix]
-    - test -f ${PREFIX}/share/jupyter/nbextensions/mols2grid/index.js                                 # [unix]
-    - test -f ${PREFIX}/share/jupyter/labextensions/mols2grid/package.json                            # [unix]
-    - if not exist %PREFIX%\\share\\jupyter\\nbextensions\\mols2grid\\extension.js (exit 1)           # [win]
-    - if not exist %PREFIX%\\share\\jupyter\\nbextensions\\mols2grid\\index.js (exit 1)               # [win]
-    - if not exist %PREFIX%\\share\\jupyter\\labextensions\\mols2grid\\package.json (exit 1)          # [win]
+    - python -c 'from importlib.metadata import version; assert version("mols2grid") == "{{ version }}"'
+    - python -c 'from importlib.resources import files; assert files("mols2grid").joinpath("static", "widget.js").exists()'
+    - python -c 'from importlib.resources import files; assert files("mols2grid").joinpath("templates", "js", "callbacks", "show_3d.js").exists()'
   requires:
     - pip
     - python {{ python_min }}
